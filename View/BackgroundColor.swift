@@ -9,8 +9,9 @@ import SwiftUI
 
 struct BackgroundColor: View {
     var body: some View {
-        LinearGradient(colors: [.indigo, .blue], startPoint: .top, endPoint: .bottom)
-            .ignoresSafeArea()
+        Color.white
+        .ignoresSafeArea()
+
     }
 }
 
