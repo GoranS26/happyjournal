@@ -26,6 +26,7 @@ struct SecondOnBoardingView: View {
                     .resizable()
                     .scaledToFit()
                     .frame(width: 350)
+                    .background(Capsule().fill(Color.gray.opacity(0.2)).frame(width: 250, height: 150))
                 Spacer()
             }
     }
@@ -33,4 +34,5 @@ struct SecondOnBoardingView: View {
 
 #Preview {
     SecondOnBoardingView()
+    
 }

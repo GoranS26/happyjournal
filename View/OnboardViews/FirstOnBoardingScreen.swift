@@ -8,15 +8,16 @@
 import SwiftUI
 
 struct FirstOnBoardingScreen: View {
+
     var body: some View {
         
             VStack{
                 Text("Welcome to Journaly")
-                    .foregroundStyle(.black)
+                    .foregroundStyle(.primary)
                     .font(.system(size: 35, weight: .bold, design: .rounded))
                     .padding()
                 Text("Capture your moods, thoughts, feelings and productivity all in one place.")
-                    .foregroundStyle(.black)
+                    .foregroundStyle(.primary)
                     .font(.system(size: 20, weight: .medium, design: .rounded))
                     .padding(.horizontal)
                     .multilineTextAlignment(.center)
@@ -26,6 +27,7 @@ struct FirstOnBoardingScreen: View {
                     .resizable()
                     .scaledToFit()
                     .frame(width: 350)
+                    .background(Circle().fill(Color.gray.opacity(0.2)))
                 Spacer()
             }
     }
@@ -33,4 +35,5 @@ struct FirstOnBoardingScreen: View {
 
 #Preview {
     FirstOnBoardingScreen()
+//        .preferredColorScheme(.dark)
 }

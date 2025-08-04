@@ -9,12 +9,15 @@ import SwiftUI
 
 struct OnboardingView: View {
     
-   @State private var currentPage = 0
+    init() {
+        UIPageControl.appearance().currentPageIndicatorTintColor = UIColor.black
+        UIPageControl.appearance().pageIndicatorTintColor = UIColor.lightGray
+    }
+
+    @State private var selectedPage = 0
+    @State private var currentPage = 0
     
     var body: some View {
-        ZStack{
-            BackgroundColor()
-            
             TabView(selection: $currentPage){
                 FirstOnBoardingScreen()
                     .tag(0)
@@ -24,16 +27,16 @@ struct OnboardingView: View {
                     .tag(2)
                 FourthOnBoardingScreen()
                     .tag(3)
-                
             }
+            .tabViewStyle(.page)
+            .indexViewStyle(.page(backgroundDisplayMode: .always))
+            .animation(.spring, value: selectedPage)
+            .tint(.black)
+            .navigationBarBackButtonHidden(true)
             
-            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
-            
-        }
-        .navigationBarBackButtonHidden(true)
     }
 }
 
 #Preview {
-    OnboardingView()
+        OnboardingView()
 }

@@ -26,6 +26,8 @@ struct ThirdOnBoardingScreen: View {
                     .resizable()
                     .scaledToFit()
                     .frame(width: 350)
+                    .background(Ellipse().fill(Color.gray.opacity(0.2)).frame(width: 150, height: 16).offset(x: 105, y: 175))
+                    .background(Circle().fill(Color.gray.opacity(0.1)))
                 Spacer()
             }
     }

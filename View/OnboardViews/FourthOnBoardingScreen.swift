@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct FourthOnBoardingScreen: View {
+    
+    @AppStorage("hasSeenOnboarding") var hasSeenOnboarding: Bool = false
+    
     var body: some View {
-        
+        NavigationStack{
             VStack{
                 Text("Get Started")
                     .foregroundStyle(.black)
@@ -27,7 +30,19 @@ struct FourthOnBoardingScreen: View {
                     .scaledToFit()
                     .frame(width: 350)
                 Spacer()
+                NavigationLink(destination: DashboardView().onAppear{hasSeenOnboarding = true}){
+                    Text("GET STARTED")
+                        .foregroundStyle(.black)
+                        .font(.system(size: 18, weight: .medium, design: .rounded))
+                        .frame(maxWidth: 200, maxHeight: 50)
+                        .background(Color.gray.opacity(0.4))
+                        .clipShape(Capsule())
+                }
+
+                Spacer()
             }
+        }
+          
     }
 }
 
