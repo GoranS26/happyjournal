@@ -41,7 +41,7 @@ struct WelcomeScreen: View {
                         .fontDesign(.rounded)
                         .fontWeight(.heavy)
                         .opacity(animate ? 1.0 : 0)
-                        .offset(y: animate ? 0 : 20)
+                        .offset(y: animate ? 0 : 22)
                     
                         .animation(.easeOut(duration: 0.6).delay(0.4), value: animate)
                     

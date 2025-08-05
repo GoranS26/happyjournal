@@ -55,7 +55,7 @@ struct SettingsView: View {
                                     .frame(width: 220, height: 30)
                                     .shadow(color: .black, radius: 2, x: 0, y: 1)
                                     .overlay(
-                                        Text("Manage Subscription")
+                                        Text("Manage Subscriptions")
                                             .foregroundStyle(.black)
                                     )
                                     .padding(.bottom)
