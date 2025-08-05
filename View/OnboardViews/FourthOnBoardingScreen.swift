@@ -30,7 +30,7 @@ struct FourthOnBoardingScreen: View {
                     .scaledToFit()
                     .frame(width: 350)
                 Spacer()
-                NavigationLink(destination: DashboardView().onAppear{hasSeenOnboarding = true}){
+                NavigationLink(destination: MainView().onAppear{hasSeenOnboarding = true}){
                     Text("GET STARTED")
                         .foregroundStyle(.black)
                         .font(.system(size: 18, weight: .medium, design: .rounded))

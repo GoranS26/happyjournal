@@ -19,7 +19,6 @@ struct WelcomeScreen: View {
                     
                     // Animated Icon
                     Image(systemName: "book.pages.fill")
-                    
                         .resizable()
                         .scaledToFit()
                         .frame(width: 120, height: 120)
@@ -32,7 +31,7 @@ struct WelcomeScreen: View {
                         )
                         .scaleEffect(animate ? 1.0 : 0.6)
                         .opacity(animate ? 1.0 : 0)
-                        .animation(.easeOut(duration: 0.6).delay(0.2), value: animate)
+                        .animation(.easeOut(duration: 0.6).delay(0.4), value: animate)
 
                     
                     // Animated Title
@@ -61,7 +60,7 @@ struct WelcomeScreen: View {
                     }
                     .opacity(animate ? 1.0 : 0)
                     .offset(y: animate ? 0 : 30)
-                    .animation(.easeOut(duration: 0.6).delay(0.6), value: animate)
+                    .animation(.easeOut(duration: 0.6).delay(0.4), value: animate)
                     .padding(.bottom, 40)
                 }
                 .padding()

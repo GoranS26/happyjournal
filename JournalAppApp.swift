@@ -16,7 +16,7 @@ struct JournalAppApp: App {
         WindowGroup {
             ZStack{
                 if hasSeenOnboarding{
-                    DashboardView()
+                    MainView()
                         .transition(.move(edge: .trailing))
                 } else {
                     WelcomeScreen()
