@@ -36,6 +36,7 @@ struct MainView: View {
                     Text("Settings")
                 }
         }
+        
         .navigationBarBackButtonHidden(true)
         .tint(.black)
     }

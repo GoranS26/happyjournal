@@ -11,7 +11,7 @@ struct EntriesView: View {
     var body: some View {
         NavigationStack{
             VStack{
-                
+                ToolbarButton()
             }
             .navigationTitle("Entries")
         }
