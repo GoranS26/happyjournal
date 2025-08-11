@@ -21,20 +21,31 @@ struct DashboardView: View {
     var body: some View {
         NavigationStack{
             VStack{
+                HStack{
+                    Text("DASHBOARD")
+                        .font(.bangers(size: 45))
+                        .padding(.top, 20)
+                        .padding(.bottom)
+                        .offset(x: -19)
+                    Image(systemName: "house.fill")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 40)
+                            .foregroundColor(.black)
+                            .padding(.leading, 100)
+                }
+                
                 HStack(spacing: 75){
                     VStack(alignment: .leading){
-                        Text("Good evening, \(username)!")
-                            .font(.title3)
-                            .bold()
-                            
-                                   
+                        Text("Good evening: \(username)!")
+                            .font(.smallCaps(size: 21))
                         Text(date)
-                            .font(.subheadline)
+                            .font(.smallCaps(size: 15))
                             .foregroundColor(.gray)
                     }
                     .offset(x: -8)
                     Text("Last entry: \(lastEntryDate)")
-                        .font(.subheadline)
+                        .font(.smallCaps(size: 15))
                         .multilineTextAlignment(.center)
                         .foregroundStyle(.gray)
                 }
@@ -46,56 +57,54 @@ struct DashboardView: View {
             .padding(.horizontal)
             VStack{
                 HStack{
+                        RoundedRectangle(cornerRadius: 20)
+                            .frame(width: 180, height: 180)
+                            .foregroundStyle(.blue.opacity(0.7))
+                            .overlay(
+                                VStack{
+                                    Text("\(entriesCount)")
+                                        .font(.chalk(size: 70))
+                                        .padding(.top)
+                                        
+                                        
+                                    Text("Entries")
+                                        .font(.bangers(size: 40))
+                                        .padding(.bottom)
+                                }
+                                )
                     RoundedRectangle(cornerRadius: 20)
                         .frame(width: 180, height: 180)
-                        .foregroundStyle(.blue.opacity(0.6))
-                        .overlay(
-                            VStack(spacing: 10){
-                                Text("\(entriesCount)")
-                                    .font(.system(size: 70, weight: .bold, design: .rounded))
-                                    .fontWeight(.bold)
-                                Text("Entries")
-                                    .font(.system(size: 20, weight: .ultraLight, design: .rounded))
-                                    .bold()
-                                    
-                            }
-                                
-                            )
-                    RoundedRectangle(cornerRadius: 20)
-                        .frame(width: 180, height: 180)
-                        .foregroundStyle(.indigo.opacity(0.6))
+                        .foregroundStyle(.purple.opacity(0.7))
                         .overlay(
                             VStack(spacing: 10){
                                 HStack{
                                     Text("\(streakDays)")
-                                        .font(.system(size: 70, weight: .bold, design: .rounded))
-                                        .fontWeight(.bold)
-                                        .offset(x: 10)
+                                        .font(.chalk(size: 70))
+                                        
+                                        .offset(x: 11, y: 5)
                                     Text("d")
-                                        .font(.system(size: 20, weight: .semibold, design: .rounded))
+                                        .font(.chalk(size: 25))
                                         .padding(.top, 30)
-                                        .offset(x: -10)
+                                        .offset(x: -10, y: 6)
                                     
                                 }
                                 Text("Streak")
-                                    .font(.system(size: 20, weight: .ultraLight, design: .rounded))
-                                    .bold()
-                                
-                    
+                                    .font(.bangers(size: 40))
+                                    .offset(y: -5)
                             }
                             )
                 }
                     RoundedRectangle(cornerRadius: 20)
                         .frame(width: 365, height: 180)
-                        .foregroundStyle(.orange.opacity(0.6))
+                        .foregroundStyle(.orange.opacity(0.7))
                         .overlay(
                             VStack(spacing: 10){
                                 Text("Quote of the day:")
-                                    .font(.title2)
+                                    .font(.bangers(size: 30))
                                     .bold()
                                     .padding(.top)
                                 Text("\(quoteOfTheDay)")
-                                    .font(.callout)
+                                    .font(.bangers(size: 20))
                                     .fontWeight(.medium)
                                     .multilineTextAlignment(.center)
                                     .padding(.horizontal)
@@ -106,7 +115,7 @@ struct DashboardView: View {
                 HStack{
                     RoundedRectangle(cornerRadius: 20)
                         .frame(width: 180, height: 180)
-                        .foregroundStyle(.yellow.opacity(0.6))
+                        .foregroundStyle(.yellow.opacity(0.7))
                         .overlay(
                             VStack(spacing: 10){
                                 HStack{
@@ -116,7 +125,7 @@ struct DashboardView: View {
                                         
                                 }
                                 Text("Mood")
-                                    .font(.system(size: 20, weight: .ultraLight, design: .rounded))
+                                    .font(.bangers(size: 30))
                                     .bold()
                                 
                     
@@ -134,7 +143,7 @@ struct DashboardView: View {
                                         
                                 }
                                 Text("Weather")
-                                    .font(.system(size: 20, weight: .ultraLight, design: .rounded))
+                                    .font(.bangers(size: 30))
                                     .bold()
                             }
                             )
@@ -143,7 +152,7 @@ struct DashboardView: View {
                 
             }
             Spacer()
-                .navigationTitle("Dashboard")
+//                .navigationTitle("Dashboard")
         }
     }
 }

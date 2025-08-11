@@ -14,11 +14,11 @@ struct FirstOnBoardingScreen: View {
             VStack{
                 Text("Welcome to Journaly")
                     .foregroundStyle(.primary)
-                    .font(.system(size: 35, weight: .bold, design: .rounded))
+                    .font(.bangers(size: 46))
                     .padding()
                 Text("Capture your moods, thoughts, feelings and productivity all in one place.")
                     .foregroundStyle(.primary)
-                    .font(.system(size: 20, weight: .medium, design: .rounded))
+                    .font(.bangers(size: 30))
                     .padding(.horizontal)
                     .multilineTextAlignment(.center)
                     .padding()

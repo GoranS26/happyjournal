@@ -10,65 +10,90 @@ import SwiftUI
 struct SettingsView: View {
     var body: some View {
         NavigationStack{
-            VStack{
-//                    Image(systemName: "plus")
-//                        .overlay(
-//                            Circle().frame(width: 50, height: 50)
-//                                .foregroundColor(.white)
-//                                .shadow(color: .black, radius: 5, x: 0, y: 0)
-//                                .overlay(
-//                                    Image(systemName: "plus")
-//                                        .resizable()
-//                                        .scaledToFit()
-//                                        .padding()
-//                                )
-//                        )
-//                   Spacer()
-                
+            VStack(spacing: 25){
+                Text("SETTINGS")
+                    .font(.bangers(size: 45))
+                    .offset(x: -110)
                 RoundedRectangle(cornerRadius: 20)
                     .foregroundStyle(Color.white)
                     .frame(width: 360, height: 180)
-                    .shadow(color: .black, radius: 6, x: 0, y: 4)
+                    .shadow(radius: 5)
                     .overlay(
-                        VStack(){
-                            Text("Account")
-                                .font(.system(size: 25, weight: .semibold))
-                                .padding()
-                            
-                            Spacer()
-                            
-                            HStack{
-                                
-                                Text("Journaly Pro")
+                            VStack(alignment: .leading){
+                                    Text("Subscription")
+                                    .font(.bangers(size: 30))
+                                        .padding()
                                 Spacer()
-                                Text("Active")
-                                    .foregroundStyle(.green)
                                 
+                                HStack{
+                                    
+                                    Text("Journaly Pro")
+                                        .font(.smallCaps(size: 20))
+                                    Spacer()
+                                    Text("Active")
+                                        .foregroundStyle(.green)
+                                        .font(.smallCaps(size: 20))
+                                }
+                                .padding()
+                                Spacer()
+                              HStack{
+                                Spacer()
+                                    RoundedRectangle(cornerRadius: 15)
+                                        .fill(Color.white)
+                                        .frame(maxWidth: 200, maxHeight: 40 )
+                                        .shadow(radius: 5)
+                                        .overlay(
+                                            Text("Manage Subscription")
+                                                .font(.smallCaps(size: 15))
+                                        )
+                                        .padding(.bottom)
+                                    Spacer()
+                                }
+                              
+                            }
+                            
+                        
+                        
+                      
+                        )
+                    
+                RoundedRectangle(cornerRadius: 20)
+                    .foregroundStyle(Color.white)
+                    .frame(width: 360, height: 180)
+                    .shadow(radius: 5)
+                    .overlay(
+                        VStack(alignment: .leading){
+                                Text("Account")
+                                .font(.bangers(size: 30))
+                                    .padding()
+                           
+                            HStack{
+                                Text("Name:")
+                                    .font(.smallCaps(size: 20))
+                                Spacer()
+                                Text("John Doe")
+                                    .font(.smallCaps(size: 20))
+                                   
                             }
                             .padding()
-                            Spacer()
-                            Button {
-                                
-                            } label: {
-                                RoundedRectangle(cornerRadius: 20)
-                                    .foregroundStyle(.white)
-                                    .frame(width: 220, height: 30)
-                                    .shadow(color: .black, radius: 2, x: 0, y: 1)
-                                    .overlay(
-                                        Text("Manage Subscriptions")
-                                            .foregroundStyle(.black)
-                                    )
-                                    .padding(.bottom)
-                                
+                            HStack{
+                                Text("Email:")
+                                    .font(.smallCaps(size: 20))
+                                Spacer()
+                                Text("john@doe.com")
+                                    .font(.smallCaps(size: 20))
+                               
                             }
+                            .padding()
+                            
+                            Spacer()
                         }
-                        
                         )
                 Spacer()
                     
             }
             
-            .navigationTitle("Settings")
+//            .navigationTitle("Settings")
             
         }
         
